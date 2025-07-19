@@ -1,20 +1,19 @@
-Le projet portait sur l’identification automatisée des collemboles (collembolans) à l’aide de méthodes de deep learning. 🧠
-Ces micro-organismes présentent un véritable défi : leur taille infime, des différences morphologiques parfois très subtiles et l’usage obligatoire de la microscopie 🔬 compliquent grandement leur reconnaissance.
+The project focused on automating the identification of springtails (Collembola) using deep learning. 🧠 These tiny organisms are especially challenging to recognize due to their minuscule size, very subtle morphological differences, and the need for high magnification under a microscope. 🔬
 
-Nous disposions de 1 117 images annotées, chacune associée à des bounding boxes au format YOLO+ et à quatre jeux d’étiquettes fournis par des experts, variant de 0 à 8 selon l’espèce. Ces annotations souffraient de plusieurs biais et contradictions. 📊
+We worked with 1,117 images, each annotated with YOLO+ bounding boxes and labeled (0–8) by four experts—labels that often conflicted. 📊
 
-Nos objectifs :
+Objectives 🎯
 
-Sur la base de test non étiquetée, prédire les classes de collemboles et mesurer la performance via le F1-macro sur la plateforme Kaggle.
+Predict the springtail classes on the unlabeled test set and evaluate performance via the macro F1 score on Kaggle.
 
-À partir des annotations conflictuelles du jeu d’entraînement, déterminer les véritables labels de chaque espèce.
+Infer the true species labels in the training set from the available (and sometimes conflicting) annotations.
 
-Principaux challenges :
+Key challenges ⚠️
 
-Grande hétérogénéité des images (résolution, qualité et conditions d’éclairage variables).
+High variability across images (resolution, quality, lighting).
 
-Disparités entre les annotations des experts, rendant le jeu de données d’entraînement bruité.
+Noisy training labels due to discrepancies between experts.
 
-Prédominance de la classe majoritaire (0 – « autres »), difficile à distinguer visuellement des espèces ciblées.
+Dominance of the majority “other” class (0), which is visually hard to distinguish from target species.
 
-Mauvaises annotations YOLO+ : certaines images contenaient des spécimens alors qu’elles étaient supposées ne représenter que le “fond”.
+YOLO+ annotation errors: some images contained specimens even though they were supposed to depict only the background.
